@@ -1,0 +1,25 @@
+.ant-table-thead > tr > th.zks_eth {
+    background-color: #f0794e;
+    color: white;
+}
+
+.ant-table-thead > tr > th.zks_lite {
+    background-color: #5bc0de;
+    color: white;
+}
+
+.ant-table-thead > tr > th.zks_era {
+    background-color: #4e9ed4;
+    color: white;
+}
+
+.ant-table-thead > tr > th.trustData {
+    background-color: #d5ffd5;
+}
+
+.zks_footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}

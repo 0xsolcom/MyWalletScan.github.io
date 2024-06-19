@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.custom-menu {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.custom-menu .ant-menu-item {
+    border-bottom: none !important;
+    color: #333;
+    position: relative;
+}
+
+.custom-menu .ant-menu-item::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #0084ff;
+    transition: all 0.3s;
+}
+
+.custom-menu .ant-menu-item:hover::before,
+.custom-menu .ant-menu-item-selected::before {
+    width: 100%;
+    left: 0;
+}
+
+.custom-menu .ant-menu-item a {
+    color: #333;
+}
+
+.custom-menu .ant-menu-item a:hover,
+.custom-menu .ant-menu-item-selected a {
+    color: #1890ff;
+}
+
+.custom-menu .ant-menu-item::after,
+.custom-menu .ant-menu-item-selected::after,
+.custom-menu .ant-menu-item:hover::after {
+    content: none !important;
+}
+
+.custom-menu .ant-menu-item::before {
+    height: 1px;
+}
