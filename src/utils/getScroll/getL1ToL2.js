@@ -1,7 +1,16 @@
 import axios from "axios";
 
+const KeyList = [
+    "b1c94deb-3d1b-430d-886f-c528f1a4f938",
+    "6f8ba1b4-418d-405b-be46-54be1c91ccc5",
+    "9077a484-fbec-4a9f-9555-5545afbbe944",
+    "b1c94deb-3d1b-430d-886f-c528f1a4f938",
+    "6f8ba1b4-418d-405b-be46-54be1c91ccc5",
+    "9077a484-fbec-4a9f-9555-5545afbbe944"
+]
 const getEthTx = async (address) => {
-    const url = "https://eth.blockscout.com/api?module=account&action=txlist&sort=asc&address=" + address + "&start_block=0"
+	const key = KeyList[Math.floor(Math.random() * KeyList.length)]
+    const url = "https://eth.blockscout.com/api?module=account&action=txlist&sort=asc&address=" + address + "&start_block=0" + "&apikey=" + key
     const response = await axios.get(url);
     return response.data.result;
 }
