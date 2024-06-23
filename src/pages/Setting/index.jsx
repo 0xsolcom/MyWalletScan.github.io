@@ -17,14 +17,15 @@ const getDataInfo = (data) => {
         const zksync = data['addresses'] ? data['addresses'].length : 0;
         const stark = data['stark_addresses'] ? data['stark_addresses'].length : 0;
         const linea = data['linea_addresses'] ? data['linea_addresses'].length : 0;
+        const Scroll = data['Scroll_addresses'] ? data['Scroll_addresses'].length : 0;
+        const Base = data['Base_addresses'] ? data['Base_addresses'].length : 0;
         const l0 = data['l0_addresses'] ? data['l0_addresses'].length : 0;
         return [
             {
                 key: '1',
-                zksync,
-                stark,
                 linea,
-                l0
+                Scroll,
+                Base
             },
         ];
     } catch (e) {
@@ -84,20 +85,16 @@ const Setting = () => {
                     <Text>备份文件中的地址数量信息</Text>
                     <Table dataSource={data} pagination={false} columns={[
                         {
-                            title: 'zkSync',
-                            dataIndex: 'zksync',
-                        },
-                        {
-                            title: 'stark',
-                            dataIndex: 'stark',
-                        },
-                        {
                             title: 'linea',
                             dataIndex: 'linea',
                         },
                         {
-                            title: 'l0',
-                            dataIndex: 'l0',
+                            title: 'Scroll',
+                            dataIndex: 'Scroll',
+                        },
+                        {
+                            title: 'Base',
+                            dataIndex: 'Base',
                         }
                     ]}/>
                     <Space style={{marginTop: '20px'}}>
@@ -160,7 +157,7 @@ const Setting = () => {
                         <Button style={{...buttonStyles}} type={"primary"}
                                 onClick={
                                     () => {
-                                        window.open('https://docs.google.com/forms/d/e/1FAIpQLSdRPvxzg4Xrp3KcRmmkXhj_zVzbiYILYs8gKrGmuUh2B0iu0w/viewform?usp=pp_url');
+                                        window.open('https://t.me/Spongebob8');
                                     }
                                 }
                         >

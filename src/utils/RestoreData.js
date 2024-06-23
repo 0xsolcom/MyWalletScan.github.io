@@ -1,9 +1,8 @@
 const RestoreData = async (data, isDeleteOld) => {
     const addressTypes = [
-        "addresses",
-        "stark_addresses",
-        "l0_addresses",
         "linea_addresses",
+        "Scroll_addresses",
+        "Base_addresses",
     ];
 
     if (isDeleteOld) {

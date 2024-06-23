@@ -18,12 +18,12 @@ function LanguageSwitcher() {
         localStorage.setItem('i18nextLng', language);
     };
 
-    return (
-        <Select defaultValue={i18n.language} style={{width: 120}} onChange={changeLanguage}>
-            <Option value="zh">中文</Option>
-            <Option value="en">English</Option>
-        </Select>
-    );
+//    return (
+//        <Select defaultValue={i18n.language} style={{width: 120}} onChange={changeLanguage}>
+//            <Option value="zh">中文</Option>
+//            <Option value="en">English</Option>
+//        </Select>
+//    );
 }
 
 const MenuHeader = () => {

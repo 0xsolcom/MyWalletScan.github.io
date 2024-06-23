@@ -505,7 +505,7 @@ const Base = () => {
                         />
                     </Spin>
                 </div>
-                <div className="Base_footer">
+                <div className="linea_footer">
                     <Card size={"small"} style={{width: "100%"}}>
                         <div style={{width: '100%', display: 'flex', justifyContent: 'space-between'}}>
                             <Button type="primary" onClick={() => {

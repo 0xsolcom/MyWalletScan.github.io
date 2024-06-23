@@ -2,10 +2,9 @@ import {saveAs} from 'file-saver';
 
 const BackupData = async () => {
     const addressTypes = [
-        "addresses",
-        "stark_addresses",
-        "l0_addresses",
         "linea_addresses",
+        "Scroll_addresses",
+        "Base_addresses",
     ];
 
     const data = {};
