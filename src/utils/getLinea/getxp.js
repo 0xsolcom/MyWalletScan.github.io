@@ -15,7 +15,7 @@ const getxp = async (address) => {
             return { rank_xp, lxp: xp };
         } else {
             // 如果数据为空数组，返回默认值
-            return { rank_xp: 0, lxp: 0 };
+            return { rank_xp: '-', lxp: '-' };
         }
     } catch (error) {
         console.error('Error fetching data:', error);
