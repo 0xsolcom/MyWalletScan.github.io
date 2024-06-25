@@ -15,7 +15,8 @@ const getxp = async (address) => {
             const xp = Number(data[0].xp);
 			return {rank_xp, lxp: xp};
         } else {
-            throw new Error('Invalid data format or empty array');
+            // 如果数据为空数组，返回默认值
+            return { 0, lxp: 0 };
         }
     } catch (error) {
         console.error('Error fetching data:', error);
