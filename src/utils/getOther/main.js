@@ -1,18 +1,19 @@
 import getxp from "./getxp.js";
 import getsessions from "./getsessions.js";
 //import getether from "./ether.js";
+import getlista from "./lista.js";
 
 const getOtherData = async (address) => {
     let data;
     try {
         const xp = await getxp(address);
 		const sessions = await getsessions(address);
-		//const ether = await getether(address);
+		const lista = await getlista(address);
         data = {
             address,
             xp,
 			sessions,
-			//ether,
+			lista,
             result: "success"
         }
         return data

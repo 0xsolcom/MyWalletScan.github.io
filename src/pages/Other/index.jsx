@@ -123,11 +123,11 @@ const Other = () => {
             },
         },
         {
-            //title: "LXP-L积分",
-	    className: "LXP-L",
+            title: "一些项目-持续添加中",
+	    className: "TOP",
             children: [
                 {
-                    title: "LXP-L积分",
+                    title: "LXP-L",
 		    className: "LXP-L",
                     children: [
                         {
@@ -162,16 +162,24 @@ const Other = () => {
                     ]
                 },
                 {
-                    title: "等待添加",
-		    className: "trustData",
+                    title: "Lista DAO",
+		    className: "lista",
 		    align: "center",
                     children: [
                         {
-			    title: "积分",
-			    dataIndex: "-",
-			    key: "-",
-			    align: "center",
-			}
+                            title: "总积分",
+                            dataIndex: ["lista", "quest"],
+                            align: "center",
+                            render: (text, record) => text,
+                            sorter: (a, b) => a.lista.quest - b.lista.quest,
+                        },
+                        {
+                            title: "排名",
+                            dataIndex: ["lista", "position"],
+                            align: "center",
+                            render: (text, record) => text,
+			    sorter: (a, b) => a.lista.position - b.lista.position,
+                        },
                     ]
                 },
                 {

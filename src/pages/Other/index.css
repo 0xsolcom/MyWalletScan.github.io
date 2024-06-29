@@ -1,3 +1,7 @@
+.ant-table-thead > tr > th.TOP {
+    background-color: #B7950B;
+    color: white;
+}
 .ant-table-thead > tr > th.LXP-L {
     background-color: #f0794e;
     color: white;
@@ -11,6 +15,11 @@
 .ant-table-thead > tr > th.zks_era {
     background-color: #4e9ed4;
     color: white;
+}
+
+
+.ant-table-thead > tr > th.lista {
+    background-color: #d5ffd5;
 }
 
 .ant-table-thead > tr > th.trustData {
