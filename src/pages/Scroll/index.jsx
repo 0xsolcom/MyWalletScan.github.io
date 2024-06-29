@@ -138,6 +138,7 @@ const Scroll = () => {
                     key: "Scroll_eth_sessions",
                     align: "center",
                     render: (text, record) => text,
+		    sorter: (a, b) => a.sessions - b.sessions,
                 },
                 {
                     title: "Tx",

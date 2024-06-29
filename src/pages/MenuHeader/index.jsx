@@ -38,7 +38,7 @@ const MenuHeader = () => {
         // },
         {
             label: "Linea",
-            key: 'linea',
+            key: 'Linea',
         },
         {
             label: "Scroll",
@@ -47,6 +47,10 @@ const MenuHeader = () => {
         {
             label: "Base",
             key: 'Base',
+        },
+        {
+            label: "Other",
+            key: 'Other',
         },
         //{
         //    label: 'Coffee',

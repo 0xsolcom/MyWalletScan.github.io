@@ -6,6 +6,7 @@ import StarkInfo from "@pages/StarkInfo/index.jsx";
 import Linea from "@pages/Linea/index.jsx";
 import Scroll from "@pages/Scroll/index.jsx";
 import Base from "@pages/Base/index.jsx";
+import Other from "@pages/Other/index.jsx";
 
 const Zksync = React.lazy(() => import("@pages/Zksync"));
 const MainPage = React.lazy(() => import("@pages/MainPage"));
@@ -35,7 +36,7 @@ const router = [
             //     element: <StarkInfo/>
             // },
             {
-                path: '/linea',
+                path: '/Linea',
                 element: <Linea/>
             },
             {
@@ -45,6 +46,10 @@ const router = [
             {
                 path: '/Base',
                 element: <Base/>
+            },
+            {
+                path: '/Other',
+                element: <Other/>
             },
             // {
             //     path: '/Layer',

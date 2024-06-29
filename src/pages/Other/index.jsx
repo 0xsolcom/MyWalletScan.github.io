@@ -11,12 +11,12 @@ import {
     SyncOutlined,
     UploadOutlined
 } from "@ant-design/icons";
-import getLineaData from "@utils/getLinea/main.js";
+import getOtherData from "@utils/getOther/main.js";
 import './index.css'
 
 const {TextArea} = Input;
 const {Content} = Layout;
-const Linea = () => {
+const Other = () => {
     const [isBatchModalVisible, setIsBatchModalVisible] = useState(false);
     const [batchLoading, setBatchLoading] = useState(false);
     const [data, setData] = useState([]);
@@ -39,7 +39,7 @@ const Linea = () => {
     useEffect(() => {
         setTableLoading(true);
 
-        const storedAddresses = localStorage.getItem('linea_addresses');
+        const storedAddresses = localStorage.getItem('Other_addresses');
         setTimeout(() => {
             setTableLoading(false);
         }, 500);
@@ -54,7 +54,7 @@ const Linea = () => {
     useEffect(() => {
         if (!initialized) return;
 
-        localStorage.setItem('linea_addresses', JSON.stringify(data));
+        localStorage.setItem('Other_addresses', JSON.stringify(data));
     }, [data, initialized]);
 
     const columns = [
@@ -90,7 +90,7 @@ const Linea = () => {
                         icon={<EditOutlined/>}
                         onConfirm={() => {
                             setData([...data]);
-                            localStorage.setItem('linea_addresses', JSON.stringify(data));
+                            localStorage.setItem('Other_addresses', JSON.stringify(data));
                         }}
                         onCancel={() => {
                         }}
@@ -123,40 +123,19 @@ const Linea = () => {
             },
         },
         {
-            title: "Linea",
+            //title: "LXP-L积分",
+	    className: "LXP-L",
             children: [
                 {
-                    title: "ETH",
-                    dataIndex: "balance",
-                    key: "linea_eth_balance",
-                    align: "center",
-                    render: (text, record) => text,
-                },
-                {
-                    title: "Tx",
-                    dataIndex: ["activity", "tx"],
-                    key: "linea_tx_amount",
-                    align: "center",
-                    render: (text, record) => text,
-                    sorter: (a, b) => a.activity.tx - b.activity.tx,
-                },
-                {
-                    title: "最后交易",
-                    dataIndex: ["activity", "lastTx"],
-                    key: "linea_latest_tx",
-                    align: "center",
-                    render: (text, record) => <a href={`https://lineascan.build/address/${record.address}`}
-                                                 target="_blank">{text}</a>,
-                },
-                {
                     title: "LXP-L积分",
+		    className: "LXP-L",
                     children: [
                         {
                             title: "总积分(xp)",
                             dataIndex: ["xp", "lxp"],
                             align: "center",
                             render: (text, record) => text,
-			    sorter: (a, b) => a.xp.lxp - b.xp.lxp,
+                            sorter: (a, b) => a.xp.lxp - b.xp.lxp,
                         },
                         {
                             title: "排名",
@@ -168,75 +147,31 @@ const Linea = () => {
                     ]
                 },
                 {
-                    title: "官方桥Tx",
+                    title: "Scroll Sessions",
+		    className: "Sessions",
+		    align: "center",
                     children: [
-                        {
-                            title: "L1->L2",
-                            dataIndex: ["L1ToL2", "L1ToL2Tx"],
-                            align: "center",
-                            render: (text, record) => text,
-                        },
-                        {
-                            title: "L2->L1",
-                            dataIndex: ["L2ToL1", "L2ToL1Tx"],
-                            align: "center",
-                            render: (text, record) => text,
-                        },
+			{
+			    title: "积分",
+			    dataIndex: "sessions",
+			    key: "Scroll_eth_sessions",
+			    align: "center",
+			    render: (text, record) => text,
+			    sorter: (a, b) => a.sessions - b.sessions,
+			},
                     ]
                 },
                 {
-                    title: "官方桥金额(ETH)",
+                    title: "等待添加",
+		    className: "trustData",
+		    align: "center",
                     children: [
                         {
-                            title: "L1->L2",
-                            dataIndex: ["L1ToL2", "L1ToL2Amount"],
-                            align: "center",
-                            render: (text, record) => text,
-
-                        },
-                        {
-                            title: "L2->L1",
-                            dataIndex: ["L2ToL1", "L2ToL1Amount"],
-                            align: "center",
-                            render: (text, record) => text,
-                        }
-                    ]
-
-                },
-                {
-                    title: "活跃统计",
-                    children: [
-                        {
-                            title: "天",
-                            dataIndex: ["activity", "dayActivity"],
-                            align: "center",
-                            render: (text, record) => text,
-                        },
-                        {
-                            title: "周",
-                            dataIndex: ["activity", "weekActivity"],
-                            align: "center",
-                            render: (text, record) => text,
-                        },
-                        {
-                            title: "月",
-                            dataIndex: ["activity", "monthActivity"],
-                            align: "center",
-                            render: (text, record) => text,
-                        },
-                        {
-                            title: "合约",
-                            dataIndex: ["activity", "contractActivity"],
-                            align: "center",
-                            render: (text, record) => text,
-                        },
-                        {
-                            title: "fee(E)",
-                            dataIndex: ["activity", "fee"],
-                            align: "center",
-                            render: (text, record) => text,
-                            sorter: (a, b) => a.activity.fee - b.activity.fee,
-                        }
+			    title: "积分",
+			    dataIndex: "-",
+			    key: "-",
+			    align: "center",
+			}
                     ]
                 },
                 {
@@ -278,7 +213,7 @@ const Linea = () => {
     ];
     const handleDelete = async (address) => {
         setData(data.filter(item => item.address !== address));
-        localStorage.setItem('linea_addresses', JSON.stringify(data.filter(item => item.address !== address)));
+        localStorage.setItem('Other_addresses', JSON.stringify(data.filter(item => item.address !== address)));
     }
     const handleBatchOk = async () => {
         try {
@@ -325,7 +260,7 @@ const Linea = () => {
                             }
                             return updatedData;
                         });
-                        const response = await getLineaData(address);
+                        const response = await getOtherData(address);
                         setData(prevData => {
                             const updatedData = [...prevData];
                             const index = updatedData.findIndex(item => item.address === address);
@@ -409,14 +344,14 @@ const Linea = () => {
                                 return updatedData;
                             });
 
-                            const response = await getLineaData(data[index].address);
+                            const response = await getOtherData(data[index].address);
                             setData(prevData => {
                                 const updatedData = [...prevData];
                                 updatedData[index] = {
                                     ...updatedData[index],
                                     ...response,
                                 };
-                                localStorage.setItem('linea_addresses', JSON.stringify(updatedData));
+                                localStorage.setItem('Other_addresses', JSON.stringify(updatedData));
                                 return updatedData;
                             });
                             resolve();
@@ -460,11 +395,11 @@ const Linea = () => {
             return;
         }
         setData(data.filter(item => !selectedKeys.includes(item.key)));
-        localStorage.setItem('linea_addresses', JSON.stringify(data.filter(item => !selectedKeys.includes(item.key))));
+        localStorage.setItem('Other_addresses', JSON.stringify(data.filter(item => !selectedKeys.includes(item.key))));
         setSelectedKeys([]);
     }
     const exportToExcelFile = () => {
-        exportToExcel(data, 'lineaInfo');
+        exportToExcel(data, 'OtherInfo');
     }
     const [editingKey, setEditingKey] = useState(null);
     const rowSelection = {
@@ -557,4 +492,4 @@ const Linea = () => {
         </div>
     )
 }
-export default Linea;
+export default Other;
