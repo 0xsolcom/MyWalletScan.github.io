@@ -1,5 +1,5 @@
 .ant-table-thead > tr > th.TOP {
-    background-color: #B7950B;
+    background-color: #2E4053;
     color: white;
 }
 .ant-table-thead > tr > th.LXP-L {
@@ -12,6 +12,11 @@
     color: white;
 }
 
+.ant-table-thead > tr > th.kelpdao {
+    background-color: #229954;
+    color: white;
+}
+
 .ant-table-thead > tr > th.zks_era {
     background-color: #4e9ed4;
     color: white;
@@ -19,7 +24,23 @@
 
 
 .ant-table-thead > tr > th.lista {
-    background-color: #d5ffd5;
+    background-color: #A93226;
+    color: white;
+}
+
+.ant-table-thead > tr > th.2 {
+    background-color: #76448A;
+    color: white;
+}
+
+.ant-table-thead > tr > th.3 {
+    background-color: #2E86C1;
+    color: white;
+}
+
+.ant-table-thead > tr > th.4 {
+    background-color: #B9770E;
+    color: white;
 }
 
 .ant-table-thead > tr > th.trustData {

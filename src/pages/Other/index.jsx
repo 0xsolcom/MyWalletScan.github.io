@@ -162,6 +162,27 @@ const Other = () => {
                     ]
                 },
                 {
+                    title: "kelpdao",
+		    className: "kelpdao",
+		    align: "center",
+                    children: [
+                        {
+                            title: "KELP MILES",
+                            dataIndex: ["kelpdao", "kelpMiles"],
+                            align: "center",
+                            render: (text, record) => text,
+                            sorter: (a, b) => a.kelpdao.kelpMiles - b.kelpdao.kelpMiles,
+                        },
+                        {
+                            title: "EigenLayer Points",
+                            dataIndex: ["kelpdao", "elPoints"],
+                            align: "center",
+                            render: (text, record) => text,
+			    sorter: (a, b) => a.kelpdao.elPoints - b.kelpdao.elPoints,
+                        },
+                    ]
+                },
+                {
                     title: "Lista DAO",
 		    className: "lista",
 		    align: "center",
