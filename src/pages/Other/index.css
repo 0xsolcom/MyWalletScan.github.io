@@ -47,9 +47,10 @@
     background-color: #d5ffd5;
 }
 
-.zks_footer {
+.Other_footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 2;
 }
+
