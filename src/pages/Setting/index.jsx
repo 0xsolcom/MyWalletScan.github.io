@@ -19,13 +19,15 @@ const getDataInfo = (data) => {
         const linea = data['linea_addresses'] ? data['linea_addresses'].length : 0;
         const Scroll = data['Scroll_addresses'] ? data['Scroll_addresses'].length : 0;
         const Base = data['Base_addresses'] ? data['Base_addresses'].length : 0;
+        const Other = data['Other_addresses'] ? data['Other_addresses'].length : 0;
         const l0 = data['l0_addresses'] ? data['l0_addresses'].length : 0;
         return [
             {
                 key: '1',
                 linea,
                 Scroll,
-                Base
+                Base,
+		Other
             },
         ];
     } catch (e) {
@@ -95,6 +97,10 @@ const Setting = () => {
                         {
                             title: 'Base',
                             dataIndex: 'Base',
+                        },
+                        {
+                            title: 'Other',
+                            dataIndex: 'Other',
                         }
                     ]}/>
                     <Space style={{marginTop: '20px'}}>
