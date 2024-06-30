@@ -3,6 +3,7 @@ const RestoreData = async (data, isDeleteOld) => {
         "linea_addresses",
         "Scroll_addresses",
         "Base_addresses",
+        "Other_addresses",
     ];
 
     if (isDeleteOld) {
