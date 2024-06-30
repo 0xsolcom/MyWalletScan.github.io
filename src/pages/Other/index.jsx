@@ -530,9 +530,9 @@ const Other = () => {
                         />
                     </Spin>
                 </div>
-                <div className="linea_footer">
-                    <Card size={"small"} style={{width: "100%"}}>
-                        <div style={{width: '100%', display: 'flex', justifyContent: 'space-between'}}>
+                <div className="Other_footer">
+                    <Card size={"small"} style={{width: "100%"}} align="center" >
+                        <div style={{width: '80%', display: 'flex', justifyContent: 'space-between'}}>
                             <Button type="primary" onClick={() => {
                                 setIsBatchModalVisible(true)
                             }} size={"large"} style={{width: "25%"}} icon={<UploadOutlined/>} loading={batchLoading}>
@@ -553,9 +553,6 @@ const Other = () => {
                                     删除选中地址
                                 </Button>
                             </Popconfirm>
-                            <Button type="primary" icon={<DownloadOutlined/>} size={"large"} style={{width: "8%"}}
-                                    onClick={exportToExcelFile}
-                            />
                         </div>
                     </Card>
                 </div>
