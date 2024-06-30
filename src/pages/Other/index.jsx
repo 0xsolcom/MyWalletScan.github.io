@@ -162,7 +162,49 @@ const Other = () => {
                     ]
                 },
                 {
-                    title: "kelpdao",
+                    title: "ether",
+		    className: "ether",
+		    align: "center",
+                    children: [
+                        {
+                            title: "loyalty points",
+                            dataIndex: ["ether", "totalIntegrationLoyaltyPoints"],
+                            align: "center",
+                            render: (text, record) => text,
+                            sorter: (a, b) => a.ether.totalIntegrationLoyaltyPoints - b.ether.totalIntegrationLoyaltyPoints,
+                        },
+                        {
+                            title: "EigenLayer Points",
+                            dataIndex: ["ether", "totalIntegrationEigenLayerPoints"],
+                            align: "center",
+                            render: (text, record) => text,
+			    sorter: (a, b) => a.ether.totalIntegrationEigenLayerPoints - b.ether.totalIntegrationEigenLayerPoints,
+                        },
+                    ]
+                },
+                {
+                    title: "renzo",
+		    className: "renzo",
+		    align: "center",
+                    children: [
+                        {
+                            title: "renzoPoints",
+                            dataIndex: ["renzo", "renzoPoints"],
+                            align: "center",
+                            render: (text, record) => text,
+                            sorter: (a, b) => a.renzo.renzoPoints - b.renzo.renzoPoints,
+                        },
+                        {
+                            title: "EigenLayer Points",
+                            dataIndex: ["renzo", "eigenLayerPoints"],
+                            align: "center",
+                            render: (text, record) => text,
+			    sorter: (a, b) => a.renzo.eigenLayerPoints - b.renzo.eigenLayerPoints,
+                        },
+                    ]
+                },
+                {
+                    title: "kelp DAO",
 		    className: "kelpdao",
 		    align: "center",
                     children: [
