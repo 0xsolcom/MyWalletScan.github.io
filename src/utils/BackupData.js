@@ -5,6 +5,7 @@ const BackupData = async () => {
         "linea_addresses",
         "Scroll_addresses",
         "Base_addresses",
+        "Other_addresses",
     ];
 
     const data = {};
