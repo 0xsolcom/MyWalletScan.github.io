@@ -55,10 +55,6 @@ const router = [
             //     element: <Layer/>,
             // },
             {
-                path: '/coffee',
-                element: <Coffee/>,
-            },
-            {
                 path: '/setting',
                 element: <Setting/>
             }
