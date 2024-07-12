@@ -134,89 +134,60 @@ const Base = () => {
                 },
                 {
                     title: "Tx",
-                    dataIndex: ["activity", "tx"],
+                    dataIndex: ["racker", "counts"],
                     key: "Base_tx_amount",
                     align: "center",
                     render: (text, record) => text,
-                    sorter: (a, b) => a.activity.tx - b.activity.tx,
+                    sorter: (a, b) => a.racker.counts - b.racker.counts,
                 },
                 {
                     title: "最后交易",
-                    dataIndex: ["activity", "lastTx"],
+                    dataIndex: ["racker", "dayGap"],
                     key: "Base_latest_tx",
                     align: "center",
                     render: (text, record) => <a href={`https://basescan.org/address/${record.address}`}
                                                  target="_blank">{text}</a>,
                 },
                 {
-                    title: "官方桥Tx",
-                    children: [
-                        {
-                            title: "L1->L2",
-                            dataIndex: ["L1ToL2", "L1ToL2Tx"],
-                            align: "center",
-                            render: (text, record) => text,
-                        },
-                        {
-                            title: "L2->L1",
-                            dataIndex: ["L2ToL1", "L2ToL1Tx"],
-                            align: "center",
-                            render: (text, record) => text,
-                        },
-                    ]
-                },
-                {
-                    title: "官方桥金额(ETH)",
-                    children: [
-                        {
-                            title: "L1->L2",
-                            dataIndex: ["L1ToL2", "L1ToL2Amount"],
-                            align: "center",
-                            render: (text, record) => text,
-
-                        },
-                        {
-                            title: "L2->L1",
-                            dataIndex: ["L2ToL1", "L2ToL1Amount"],
-                            align: "center",
-                            render: (text, record) => text,
-                        }
-                    ]
-
-                },
-                {
                     title: "活跃统计",
                     children: [
                         {
                             title: "天",
-                            dataIndex: ["activity", "dayActivity"],
+                            dataIndex: ["racker", "lenDates"],
                             align: "center",
                             render: (text, record) => text,
                         },
                         {
                             title: "周",
-                            dataIndex: ["activity", "weekActivity"],
+                            dataIndex: ["racker", "lenWeeks"],
                             align: "center",
                             render: (text, record) => text,
                         },
                         {
                             title: "月",
-                            dataIndex: ["activity", "monthActivity"],
+                            dataIndex: ["racker", "lenMonths"],
                             align: "center",
                             render: (text, record) => text,
                         },
                         {
                             title: "合约",
-                            dataIndex: ["activity", "contractActivity"],
+                            dataIndex: ["racker", "contract_counts"],
                             align: "center",
                             render: (text, record) => text,
                         },
                         {
-                            title: "fee(E)",
-                            dataIndex: ["activity", "fee"],
+                            title: "Volume($)",
+                            dataIndex: ["racker", "total_value"],
                             align: "center",
                             render: (text, record) => text,
-                            sorter: (a, b) => a.activity.fee - b.activity.fee,
+                            sorter: (a, b) => a.racker.total_value - b.racker.total_value,
+                        },
+                        {
+                            title: "燃气费($)",
+                            dataIndex: ["racker", "gas_cost"],
+                            align: "center",
+                            render: (text, record) => text,
+                            sorter: (a, b) => a.racker.gas_cost - b.racker.gas_cost,
                         }
                     ]
                 },
