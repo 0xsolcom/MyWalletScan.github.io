@@ -47,6 +47,11 @@
     background-color: #d5ffd5;
 }
 
+.ant-table-thead > tr > th.fuel {
+    background-color: #B9770E;
+    color: white;
+}
+
 .Other_footer {
     position: fixed;
     bottom: 0;
