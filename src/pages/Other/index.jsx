@@ -131,7 +131,7 @@ const Other = () => {
 		    className: "LXP-L",
                     children: [
                         {
-                            title: "总积分(xp)",
+                            title: "总积分",
                             dataIndex: ["xp", "lxp"],
                             align: "center",
                             render: (text, record) => text,
@@ -147,12 +147,12 @@ const Other = () => {
                     ]
                 },
                 {
-                    title: "Scroll Sessions",
+                    title: "Scroll",
 		    className: "Sessions",
 		    align: "center",
                     children: [
 			{
-			    title: "积分",
+			    title: "总积分",
 			    dataIndex: "sessions",
 			    key: "Scroll_eth_sessions",
 			    align: "center",
@@ -167,14 +167,14 @@ const Other = () => {
 		    align: "center",
                     children: [
                         {
-                            title: "loyalty points",
+                            title: "忠诚度积分",
                             dataIndex: ["ether", "totalIntegrationLoyaltyPoints"],
                             align: "center",
                             render: (text, record) => text,
                             sorter: (a, b) => a.ether.totalIntegrationLoyaltyPoints - b.ether.totalIntegrationLoyaltyPoints,
                         },
                         {
-                            title: "EigenLayer Points",
+                            title: "特征层点",
                             dataIndex: ["ether", "totalIntegrationEigenLayerPoints"],
                             align: "center",
                             render: (text, record) => text,
@@ -188,14 +188,14 @@ const Other = () => {
 		    align: "center",
                     children: [
                         {
-                            title: "renzoPoints",
+                            title: "总积分",
                             dataIndex: ["renzo", "renzoPoints"],
                             align: "center",
                             render: (text, record) => text,
                             sorter: (a, b) => a.renzo.renzoPoints - b.renzo.renzoPoints,
                         },
                         {
-                            title: "EigenLayer Points",
+                            title: "特征层点",
                             dataIndex: ["renzo", "eigenLayerPoints"],
                             align: "center",
                             render: (text, record) => text,
@@ -209,14 +209,14 @@ const Other = () => {
 		    align: "center",
                     children: [
                         {
-                            title: "KELP MILES",
+                            title: "海带大里程",
                             dataIndex: ["kelpdao", "kelpMiles"],
                             align: "center",
                             render: (text, record) => text,
                             sorter: (a, b) => a.kelpdao.kelpMiles - b.kelpdao.kelpMiles,
                         },
                         {
-                            title: "EigenLayer Points",
+                            title: "特征层点",
                             dataIndex: ["kelpdao", "elPoints"],
                             align: "center",
                             render: (text, record) => text,
@@ -242,6 +242,27 @@ const Other = () => {
                             align: "center",
                             render: (text, record) => text,
 			    sorter: (a, b) => a.lista.position - b.lista.position,
+                        },
+                    ]
+                },
+                {
+                    title: "FUEL",
+		    className: "fuel",
+		    align: "center",
+                    children: [
+                        {
+                            title: "总积分",
+                            dataIndex: ["fuel", "Points"],
+                            align: "center",
+                            render: (text, record) => text,
+                            sorter: (a, b) => a.fuel.Points - b.fuel.Points,
+                        },
+                        {
+                            title: "排名",
+                            dataIndex: ["fuel", "Rank"],
+                            align: "center",
+                            render: (text, record) => text,
+			    sorter: (a, b) => a.fuel.Rank - b.fuel.Rank,
                         },
                     ]
                 },
