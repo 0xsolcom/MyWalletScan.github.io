@@ -4,6 +4,7 @@ import getether from "./ether.js";
 import getlista from "./lista.js";
 import getrenzo from "./renzo.js";
 import getkelpdao from "./kelpdao.js";
+import getfuel from "./fuel.js";
 
 const getOtherData = async (address) => {
     let data;
@@ -14,6 +15,7 @@ const getOtherData = async (address) => {
 		const ether = await getether(address);
 		const renzo = await getrenzo(address);
 		const kelpdao = await getkelpdao(address);
+		const fuel = await getfuel(address);
         data = {
             address,
             xp,
@@ -22,6 +24,7 @@ const getOtherData = async (address) => {
 			ether,
 			renzo,
 			kelpdao,
+			fuel,
             result: "success"
         }
         return data
