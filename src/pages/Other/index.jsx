@@ -267,6 +267,20 @@ const Other = () => {
                     ]
                 },
                 {
+                    title: "karak",
+		    className: "karak",
+		    align: "center",
+                    children: [
+                        {
+                            title: "总积分",
+                            dataIndex: ["karak", "xp"],
+                            align: "center",
+                            render: (text, record) => text,
+                            sorter: (a, b) => a.karak.xp - b.karak.xp,
+                        }
+                    ]
+                },
+                {
                     title: "状态",
                     key: "result",
                     align: "center",
