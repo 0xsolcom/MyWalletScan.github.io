@@ -52,6 +52,11 @@
     color: white;
 }
 
+.ant-table-thead > tr > th.karak {
+    background-color: #fdba74;
+    color: white;
+}
+
 .Other_footer {
     position: fixed;
     bottom: 0;
