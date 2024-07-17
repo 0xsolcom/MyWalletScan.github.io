@@ -10,7 +10,7 @@ const karak = async (address) => {
 
         // 检查数据是否为对象并且包含所需的字段
         if (data[0].result && typeof data[0].result === 'object') {
-            const xp = Number(data[0].result.data.xp);
+            const xp = Number(data[0].result.data.xp).toFixed(2);
             return { xp };
         } else {
             // 如果数据不是对象或者不包含所需字段，返回默认值
