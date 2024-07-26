@@ -117,7 +117,7 @@ const Scroll = () => {
             className: 'address',
             render: (text, record) => {
                 if (hideColumn) {
-                    return text.slice(0, 4) + '***' + text.slice(-4);
+                    return <a href={`https://debank.com/profile/${record.address}?chain=scrl`} target="_blank">{text.slice(0, 4) + '***' + text.slice(-4)} </a>;
                 }
                 return text;
             },
