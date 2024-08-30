@@ -603,7 +603,7 @@ const Linea = () => {
           <Row
             gutter={12}
             justify="center"
-            style={{ backgroundColor: "#ccc", padding: "16px" }}
+            style={{ backgroundColor: "#f0f0f0", padding: "16px" }}
           >
             <Col span={8}>
               <Card bordered={false}>
