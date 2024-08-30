@@ -2,15 +2,7 @@ import {useEffect, useState} from "react";
 import {Button, Input, Space, Table, Modal, Form, notification, Spin, Tag, Popconfirm, Tooltip} from 'antd';
 import {Layout, Card} from 'antd';
 import {exportToExcel,} from "@utils"
-import {
-    CheckCircleOutlined,
-    CloseCircleOutlined,
-    DeleteOutlined,
-    DownloadOutlined,
-    EditOutlined, EyeInvisibleOutlined, EyeOutlined, ReloadOutlined,
-    SyncOutlined,
-    UploadOutlined
-} from "@ant-design/icons";
+import { CheckCircleOutlined, CloseCircleOutlined, DeleteOutlined, DownloadOutlined, EditOutlined, EyeInvisibleOutlined, EyeOutlined, ReloadOutlined, SyncOutlined, UploadOutlined } from "@ant-design/icons";
 import getScrollData from "@utils/getScroll/main.js";
 import './index.css'
 
@@ -30,6 +22,7 @@ const Scroll = () => {
     const toggleHideColumn = () => {
         setHideColumn(!hideColumn);
     };
+    //脱敏
     const getEyeIcon = () => {
         if (hideColumn) {
             return <EyeInvisibleOutlined/>;
@@ -268,6 +261,7 @@ const Scroll = () => {
         setData(data.filter(item => item.address !== address));
         localStorage.setItem('Scroll_addresses', JSON.stringify(data.filter(item => item.address !== address)));
     }
+    //批量添加地址
     const handleBatchOk = async () => {
         try {
             setBatchLoading(true);
@@ -353,6 +347,7 @@ const Scroll = () => {
             setBatchLoading(false)
         }
     };
+    //刷新选中地址
     const handleRefresh = async (singleKey) => {
         const keys = singleKey ? [singleKey] : selectedKeys;
         if (!keys.length) {
@@ -437,7 +432,7 @@ const Scroll = () => {
             }
         }
     };
-
+    //确认删除
     const handleDeleteSelected = async () => {
         if (!selectedKeys.length) {
             notification.error({
@@ -451,10 +446,12 @@ const Scroll = () => {
         localStorage.setItem('Scroll_addresses', JSON.stringify(data.filter(item => !selectedKeys.includes(item.key))));
         setSelectedKeys([]);
     }
+    // 导出excl
     const exportToExcelFile = () => {
         exportToExcel(data, 'lineaInfo');
     }
     const [editingKey, setEditingKey] = useState(null);
+    // 选种address
     const rowSelection = {
         selectedRowKeys: selectedKeys,
         onChange: (selectedRowKeys) => {
@@ -509,6 +506,7 @@ const Scroll = () => {
                             style={{marginBottom: "20px"}}
                             size={"small"}
                             columns={columns}
+                            scroll={{ x: 1500, y: 300 }}
                         />
                     </Spin>
                 </div>
