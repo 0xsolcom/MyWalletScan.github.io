@@ -1,21 +1,21 @@
-import {defineConfig} from 'vite';
 import react from '@vitejs/plugin-react';
-import {resolve} from 'path';
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
-export default defineConfig({
-    plugins: [react()],
+export default defineConfig( {
+    plugins: [ react() ],
     resolve: {
         alias: {
-            '@components': resolve(__dirname, './components'),
-            '@': resolve(__dirname, './src'),
-            '@routes': resolve(__dirname, './src/routes'),
-            '@pages': resolve(__dirname, './src/pages'),
-            '@utils': resolve(__dirname, './src/utils'),
-            '@store': resolve(__dirname, './src/store'),
+            '@components': resolve( __dirname, './components' ),
+            '@': resolve( __dirname, './src' ),
+            '@routes': resolve( __dirname, './src/routes' ),
+            '@pages': resolve( __dirname, './src/pages' ),
+            '@utils': resolve( __dirname, './src/utils' ),
+            '@store': resolve( __dirname, './src/store' ),
         }
     },
     base: './',
     server: {
         port: 5173,
     }
-});
+} );

@@ -1,10 +1,5 @@
 node_modules\*
 node_modules\
-\node_modules
-\/.vite/
+
+node_modules
 package-lock.json
-*.map
-node_modules/**/
-node_modules/.vite/** 
-node_modules/.vite/deps/xlsx.js
-node_modules/.vite/deps/i18next.js.map
