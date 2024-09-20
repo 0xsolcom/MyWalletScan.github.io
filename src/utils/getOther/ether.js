@@ -10,7 +10,7 @@ const ether = async (address) => {
 
         // 检查数据是否为对象并且包含所需的字段
         if (data && typeof data === 'object') {
-            const totalIntegrationEigenLayerPoints = parseInt(Number(data.totalEigenLayerPoints)).toFixed(0);
+            const totalIntegrationEigenLayerPoints = parseInt(Number(data.totalEigenlayerPoints)).toFixed(0);
             const totalIntegrationLoyaltyPoints = parseInt(Number(data.s3Points)).toFixed(0);
             return { totalIntegrationEigenLayerPoints, totalIntegrationLoyaltyPoints: totalIntegrationLoyaltyPoints };
         } else {
